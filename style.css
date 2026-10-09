@@ -1,0 +1,172 @@
+/* VARIABLES Y GENERALES */
+:root {
+    --color-principal: #05141f;    /* Negro/Azul oscuro Kia */
+    --color-secundario: #c4161c;   /* Rojo Kia */
+    --color-complementario: #22c55e;/* Verde para precios */
+    --color-fondo: #ffffff;        /* Blanco */
+    --color-texto: #1e293b;
+    --color-gris: #f1f5f9;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 1. HEADER */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 15px 30px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: var(--color-secundario);
+}
+
+/* 2. HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 30px;
+    background-color: var(--color-gris);
+    gap: 20px;
+}
+
+.hero-columna-texto, .hero-columna-imagen {
+    flex: 1;
+}
+
+.hero-columna-texto h1 { color: var(--color-principal); }
+.hero-columna-texto h2 { color: var(--color-secundario); }
+
+.boton-accion {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.boton-accion:hover { background-color: #a01015; }
+
+/* 3. NOSOTROS */
+.nosotros {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px;
+    gap: 30px;
+}
+
+.nosotros-imagen, .nosotros-texto { flex: 1; }
+.nosotros-texto h2 { color: var(--color-principal); }
+
+/* 4. PRODUCTOS (TARJETAS) */
+.productos {
+    padding: 40px 30px;
+    background-color: var(--color-gris);
+    text-align: center;
+}
+
+.productos-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    width: 280px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.precio { font-weight: bold; color: var(--color-complementario); margin: 10px 0; }
+
+.boton-tarjeta {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.boton-tarjeta:hover { background-color: var(--color-secundario); }
+
+/* 5. BENEFICIOS */
+.beneficios { padding: 40px 30px; text-align: center; }
+.beneficios-contenedor { display: flex; gap: 20px; flex-wrap: wrap; }
+.beneficio-item { flex: 1; min-width: 220px; padding: 15px; }
+
+/* 6. TABLA */
+.seccion-tabla { padding: 40px 30px; background-color: var(--color-gris); text-align: center; }
+.tabla-cursos { width: 100%; max-width: 750px; margin: 0 auto; border-collapse: collapse; background: white; }
+.tabla-cursos th, .tabla-cursos td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+.tabla-cursos th { background-color: var(--color-principal); color: white; }
+
+/* 7. GALERÍA */
+.galeria { padding: 40px 30px; text-align: center; }
+.galeria-contenedor { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+.galeria-contenedor img { border-radius: 4px; }
+
+/* 8. FORMULARIO */
+.contacto { padding: 40px 30px; background-color: var(--color-gris); }
+.formulario-contacto { max-width: 500px; margin: 0 auto; background: white; padding: 25px; border-radius: 6px; }
+.campo { margin-bottom: 12px; display: flex; flex-direction: column; }
+.campo input, .campo select, .campo textarea { padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; }
+.boton-enviar { background-color: var(--color-secundario); color: white; border: none; padding: 10px; width: 100%; cursor: pointer; border-radius: 4px; }
+.boton-enviar:hover { background-color: #a01015; }
+
+/* 9. FOOTER */
+.pie-pagina { background-color: var(--color-principal); color: white; padding: 25px 30px 10px; }
+.footer-contenido { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
+.footer-columna { flex: 1; min-width: 180px; }
+.footer-creditos { text-align: center; margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px; }
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 768px) {
+    .encabezado, .hero, .nosotros, .beneficios-contenedor, .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu ul { flex-direction: column; gap: 8px; }
+}
